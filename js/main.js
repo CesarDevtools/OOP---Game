@@ -1,9 +1,10 @@
 class Player {
   constructor() {
-    this.positionX = 40;
-    this.positionY = 0;
     this.width = 30;
     this.height = 15;
+    this.positionX = 40 - (this.width / 2);
+    this.positionY = 0;
+    
 
     this.updateUI();
   }
@@ -71,16 +72,29 @@ const player = new Player();
 const obstacle1 = new Obstacle();
 const obstacArr = [];
 
+// create obstacle
 setInterval(() => {
   const newObstacle = new Obstacle();
   obstacArr.push(newObstacle);
-}, 4000);
+}, 2000);
 
+//move obstacle
 setInterval(() => {
-  obstacArr.forEach((element) => {
-    element.moveDown();
+  obstacArr.forEach((obstacleInstance) => {
+    //move
+    obstacleInstance.moveDown();
+
+    //detect collision
+    if (
+        player.positionX < obstacleInstance.positionX + obstacleInstance.width &&
+    player.positionX + player.width > obstacleInstance.positionX &&
+    player.positionY < obstacleInstance.positionY + obstacleInstance.height &&
+    player.positionY + player.height > obstacleInstance.positionY
+    ) {
+        location.href = "gameover.html"
+    }
   });
-}, 10000);
+}, 16.66);
 
 document.addEventListener("keydown", (e) => {
   if (e.code === "ArrowLeft") {

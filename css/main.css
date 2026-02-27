@@ -3,6 +3,10 @@ body {
     margin: 0;
 }
 
+#page-gameover {
+    background-color: blanchedalmond;
+}
+
 #board {
     background-color: rgb(216, 197, 232);
     height: 100vh;
@@ -19,3 +23,4 @@ body {
     background-color: green;
     position: absolute;
 }
+
