@@ -31,7 +31,56 @@ class Player {
   }
 }
 
+class Obstacle {
+  constructor() {
+    this.width = 10;
+    this.height = 10;
+    this.positionX = Math.floor(Math.random() * (100 - this.width));
+    this.positionY = 100;
+    this.obstacleElm = null;
+
+    this.createDomElem();
+    this.updateUI()
+  }
+
+  createDomElem() {
+    this.obstacleElm = document.createElement("div");
+
+    this.obstacleElm.className = "obstacle";
+
+    const parentElem = document.getElementById("board");
+    parentElem.appendChild(this.obstacleElm);
+  }
+
+  updateUI() {
+    this.obstacleElm.style.left = `${this.positionX}vw`;
+    this.obstacleElm.style.bottom = `${this.positionY}vh`;
+    this.obstacleElm.style.height = `${this.height}vh`;
+    this.obstacleElm.style.width = `${this.width}vw`;
+  }
+
+  moveDown() {
+    this.positionY--;
+    this.updateUI()
+    
+  }
+}
+
 const player = new Player();
+
+const obstacle1 = new Obstacle();
+const obstacArr = [];
+
+setInterval(() => {
+  const newObstacle = new Obstacle();
+  obstacArr.push(newObstacle);
+}, 4000);
+
+setInterval(() => {
+  obstacArr.forEach((element) => {
+    element.moveDown();
+  });
+}, 10000);
 
 document.addEventListener("keydown", (e) => {
   if (e.code === "ArrowLeft") {
