@@ -1,6 +1,6 @@
 class Player {
   constructor() {
-    this.width = 30;
+    this.width = 10;
     this.height = 15;
     this.positionX = 40 - (this.width / 2);
     this.positionY = 0;
@@ -34,7 +34,7 @@ class Player {
 
 class Obstacle {
   constructor() {
-    this.width = 10;
+    this.width = 5;
     this.height = 10;
     this.positionX = Math.floor(Math.random() * (100 - this.width));
     this.positionY = 100;

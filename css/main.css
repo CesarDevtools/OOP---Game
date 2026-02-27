@@ -16,9 +16,18 @@ body {
     background-color: blue;
 }
 
+#player img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
 .obstacle {
     background-color: green;
     position: absolute;
+    background-image: url(../creeper.jpg);
+    background-size: contain;
+    background-repeat: no-repeat; 
 }
 
 
@@ -37,22 +46,21 @@ body {
 }
 
 .game-button {
-  background-color: #c43f3f;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0px 4px 0px #a13333;
-  transition: all 0.2s ease-in-out;
+    background-color: #c43f3f;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0px 4px 0px #a13333;
+    transition: all 0.2s ease-in-out;
 }
 
 .game-button:hover {
-  background-color: #a13333;
-  box-shadow: 0px 2px 0px #751c1c;
-  transform: translateY(2px);
+    background-color: #a13333;
+    box-shadow: 0px 2px 0px #751c1c;
+    transform: translateY(2px);
 }
-
