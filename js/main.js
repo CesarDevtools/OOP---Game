@@ -34,7 +34,7 @@ class Player {
 
 class Obstacle {
   constructor() {
-    this.width = 5;
+    this.width = 4.5;
     this.height = 10;
     this.positionX = Math.floor(Math.random() * (100 - this.width));
     this.positionY = 100;
@@ -76,7 +76,7 @@ const obstacArr = [];
 setInterval(() => {
   const newObstacle = new Obstacle();
   obstacArr.push(newObstacle);
-}, 2000);
+}, 1000);
 
 //move obstacle
 setInterval(() => {
